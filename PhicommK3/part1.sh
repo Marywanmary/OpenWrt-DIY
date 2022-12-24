@@ -16,6 +16,9 @@
 #limitations under the License.
 #
 
+echo 'æ·»åŠ è½¯ä»¶æº'
+git clone https://github.com/kenzok8/small-package package/small-package
+
 # Add Hello World
 # svn co https://github.com/jerrykuku/luci-app-vssr/trunk/  package/diy/luci-app-vssr
 # svn co https://github.com/siropboy/luci-app-vssr-plus/trunk/luci-app-vssr-plus package/new/luci-app-vssr-plus
@@ -32,31 +35,31 @@ chmod -R 755 ./package/luci-app-wolplus/*
 # svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-socat ./package/luci-app-socat
 # chmod -R 755 ./package/luci-app-socat/*
 
-#echo 'Ìí¼ÓPasswallÒÀÀµfeeds'
+#echo 'æ·»åŠ Passwallä¾èµ–feeds'
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 #echo '=========Add passwall feeds source OK!========='
 
-#echo 'Ìí¼ÓPasswallÈí¼şÔ´'
+#echo 'æ·»åŠ Passwallè½¯ä»¶æº'
 #rm -rf package/lean/luci-app-passwall 
 #git clone -b luci https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
 #echo '=========Add passwall source OK!========='
 
-echo 'Ìí¼ÓjerrykukuµÄargon-modÖ÷Ìâ'
+echo 'æ·»åŠ jerrykukuçš„argon-modä¸»é¢˜'
 rm -rf package/lean/luci-theme-argon  
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
 echo '=========Add argon-mod OK!========='
 
-echo 'Ìí¼Ólwz322µÄK3ÆÁÄ»²å¼ş'
+echo 'æ·»åŠ lwz322çš„K3å±å¹•æ’ä»¶'
 rm -rf package/lean/luci-app-k3screenctrl
 git clone https://github.com/yangxu52/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
 echo '=========Add k3screen plug OK!========='
 
-echo 'Ìæ»»lwz322µÄK3ÆÁÄ»Çı¶¯²å¼ş'
+echo 'æ›¿æ¢lwz322çš„K3å±å¹•é©±åŠ¨æ’ä»¶'
 rm -rf package/lean/k3screenctrl
 git clone https://github.com/yangxu52/k3screenctrl_build.git package/lean/k3screenctrl/
 echo '=========Replace k3screen drive plug OK!========='
 
-echo 'ÒÆ³ıbcm53xxÖĞµÄÆäËû»úĞÍ'
+echo 'ç§»é™¤bcm53xxä¸­çš„å…¶ä»–æœºå‹'
 sed -i '421,453d' target/linux/bcm53xx/image/Makefile
 sed -i '140,412d' target/linux/bcm53xx/image/Makefile
 sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bcm53xx/image/Makefile
@@ -65,6 +68,6 @@ echo '=========Remove other devices of bcm53xx OK!========='
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
 firmware='ac88u_20'
-echo 'Ìæ»»ÎŞÏßÇı¶¯'
+echo 'æ›¿æ¢æ— çº¿é©±åŠ¨'
 wget -nv https://github.com/yangxu52/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
